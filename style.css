@@ -1,0 +1,548 @@
+/* ==================
+   Global Resets & Basic Styles
+   ================== */
+:root {
+    --bg-dark-primary: #0D0D1A; /* Darker primary */
+    --bg-dark-secondary: #161625; /* Slightly darker secondary for cards */
+    --bg-dark-tertiary: #22223B; /* For interactive elements or accents */
+    --accent-primary: #00F6FF; /* Brighter cyan */
+    --accent-secondary: #40FF70; /* Brighter neon green */
+    --text-primary: #F0F0F5; /* Lighter primary text */
+    --text-secondary: #B8B8CC; /* Lighter secondary text */
+    --text-headings: #FFFFFF;
+    --font-primary: 'Poppins', sans-serif;
+    --shadow-color-primary: rgba(0, 246, 255, 0.12); /* Primary accent shadow */
+    --shadow-color-secondary: rgba(64, 255, 112, 0.1); /* Secondary accent shadow */
+    --border-color: rgba(0, 246, 255, 0.2); /* Subtle border color */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.75; /* Increased for readability */
+    color: var(--text-primary);
+    background: linear-gradient(140deg, var(--bg-dark-primary) 0%, #0A0A14 50%, var(--bg-dark-primary) 100%);
+    overflow-x: hidden;
+}
+
+main { /* Basic wrapper for semantic meaning */
+    display: block; /* Ensure it behaves as a block */
+}
+
+.container {
+    max-width: 1180px; /* Slightly wider */
+    margin: 0 auto;
+    padding: 0 30px; /* Increased padding */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; /* Bolder headings */
+    line-height: 1.35;
+    margin-bottom: 1.3rem;
+    color: var(--text-headings);
+    letter-spacing: 0.5px; /* Subtle letter spacing for headings */
+}
+
+h2 { /* Section Headings */
+    font-size: 3rem; /* Increased size */
+    font-weight: 800; /* Even bolder for section titles */
+    text-align: center;
+    margin-bottom: 60px; /* More space below heading */
+    position: relative;
+    display: inline-block;
+    padding-bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 1.5px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 90px; /* Wider underline */
+    height: 6px; /* Thicker underline */
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 4px;
+    box-shadow: 0 0 20px var(--accent-primary), 0 0 10px var(--accent-secondary); /* Enhanced glow */
+}
+
+section {
+    padding: 100px 0; /* More padding for sections */
+}
+
+section:nth-child(even) {
+    background-color: rgba(22, 22, 37, 0.35); /* var(--bg-dark-secondary) with tuned transparency */
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-primary);
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-secondary);
+    opacity: 0.85;
+}
+
+ul { list-style: none; }
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px; /* Larger padding */
+    font-size: 1.05rem; /* Slightly larger font */
+    font-weight: 600; /* Bolder button text */
+    border-radius: 10px; /* More rounded */
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Base shadow for depth */
+}
+
+.btn-primary {
+    background: linear-gradient(95deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--bg-dark-primary);
+    box-shadow: 0 5px 18px var(--shadow-color-primary);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 25px var(--shadow-color-secondary);
+    background: linear-gradient(95deg, var(--accent-secondary), var(--accent-primary));
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-primary);
+    color: var(--bg-dark-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 5px 18px var(--shadow-color-primary);
+}
+
+.btn-small { /* For buttons within cards like project links */
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ==================
+   Header & Navigation
+   ================== */
+#header {
+    background-color: rgba(13, 13, 26, 0.8); /* var(--bg-dark-primary) with less opacity */
+    backdrop-filter: blur(12px); /* Stronger blur */
+    box-shadow: 0 3px 20px rgba(0,0,0,0.5); /* Deeper shadow */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar { height: 80px; } /* Taller navbar */
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-logo {
+    font-size: 2.2rem; /* Larger logo */
+    font-weight: 800; /* Bolder logo */
+    color: var(--text-headings);
+    letter-spacing: 1.2px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 35px; /* More space between nav items */
+}
+
+.nav-link {
+    font-size: 1.05rem; /* Slightly larger nav links */
+    font-weight: 500;
+    color: var(--text-secondary);
+    position: relative;
+    padding: 8px 0; /* More vertical padding */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Underline closer to text */
+    left: 0;
+    width: 0;
+    height: 2.5px; /* Thicker underline */
+    background-color: var(--accent-primary);
+    transition: width 0.35s ease;
+    border-radius: 1px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+
+.nav-link:hover,
+.nav-link.active { color: var(--accent-primary); }
+
+.hamburger { display: none; cursor: pointer; }
+.hamburger .bar {
+    display: block;
+    width: 30px; /* Wider bars */
+    height: 3.5px; /* Thicker bars */
+    margin: 7px auto; /* More space between bars */
+    background-color: var(--text-primary);
+    transition: all 0.35s ease-in-out;
+    border-radius: 2px;
+}
+
+/* ==================
+   Hero Section
+   ================== */
+.hero-section {
+    background: none;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; /* Match navbar height */
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 4.8rem; /* Even larger for impact */
+    font-weight: 800;
+    color: var(--text-headings);
+    margin-bottom: 1rem;
+    letter-spacing: 2.5px;
+    text-shadow: 0 0 25px var(--accent-primary), 0 0 10px var(--accent-secondary); /* Stronger combined glow */
+    line-height: 1.2;
+}
+
+.hero-content .subtitle {
+    font-size: 2.2rem; /* Larger subtitle */
+    color: var(--accent-primary);
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--accent-primary);
+}
+
+.hero-content .hero-bio {
+    font-size: 1.2rem; /* Slightly larger bio */
+    color: var(--text-secondary);
+    max-width: 780px; /* Wider bio text */
+    margin: 0 auto 3rem auto;
+    line-height: 1.85;
+}
+
+.hero-buttons .btn { margin: 0 15px; }
+
+/* ==================
+   About Section
+   ================== */
+.about-content {
+    display: flex;
+    justify-content: center; /* Ensure text block is centered if it's narrower than max-width */
+}
+.about-text {
+    flex-basis: 900px; /* Use flex-basis for preferred width */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    text-align: center;
+}
+.about-text p {
+    font-size: 1.1rem; /* Larger about text */
+    line-height: 1.9; /* More spacing */
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+/* ==================
+   Skills Section
+   ================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); /* Larger minmax */
+    gap: 30px; /* Increased gap */
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.skill-item {
+    background-color: var(--bg-dark-secondary);
+    padding: 30px 25px; /* More padding */
+    border-radius: 12px; /* More rounded */
+    box-shadow: 0 6px 22px var(--shadow-color-primary);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: 1px solid var(--border-color);
+}
+.skill-item:hover {
+    transform: translateY(-10px) scale(1.05); /* More pronounced hover */
+    box-shadow: 0 10px 30px var(--accent-primary);
+}
+.skill-item h3 {
+    font-size: 1.25rem; /* Slightly larger skill name */
+    color: var(--text-primary);
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+/* ==================
+   Experience & Education & Volunteering Common Card Style
+   ================== */
+.experience-item, .education-item, .volunteer-item {
+    background-color: var(--bg-dark-secondary);
+    padding: 35px; /* More padding */
+    border-radius: 12px;
+    margin-bottom: 40px; /* More space between items */
+    border-left: 8px solid; /* Thicker border */
+    border-image: linear-gradient(to bottom, var(--accent-primary) 0%, var(--accent-secondary) 100%) 1;
+    box-shadow: 0 5px 20px var(--shadow-color-primary);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-image 0.35s ease;
+}
+.experience-item:hover, .education-item:hover, .volunteer-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 28px var(--accent-primary);
+    border-image: linear-gradient(to bottom, var(--accent-secondary) 0%, var(--accent-primary) 100%) 1; /* Flip gradient on hover */
+}
+.experience-item h3, .education-item h3, .volunteer-item h3 {
+    font-size: 1.7rem; /* Larger headings */
+    color: var(--text-headings);
+    margin-bottom: 12px;
+}
+.experience-item .experience-company-date,
+.education-item .institution-date,
+.volunteer-item .organization-role {
+    font-size: 1.05rem;
+    color: var(--accent-primary);
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: 500;
+}
+.experience-item ul, .volunteer-item ul { list-style: none; padding-left: 0; }
+.experience-item ul li, .volunteer-item ul li {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    padding-left: 30px; /* More indent */
+    position: relative;
+}
+.experience-item ul li::before, .volunteer-item ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    top: 2px; /* Fine-tune vertical alignment */
+    color: var(--accent-secondary);
+    font-weight: 700; /* Bolder bullet */
+    font-size: 1.3em;
+    line-height: 1;
+}
+
+/* ==================
+   Projects Section
+   ================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); /* Slightly larger minmax */
+    gap: 40px; /* Increased gap */
+}
+.project-card {
+    background-color: var(--bg-dark-secondary);
+    border-radius: 15px; /* More rounded */
+    overflow: hidden;
+    box-shadow: 0 8px 28px var(--shadow-color-primary);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid var(--border-color); /* Slightly thicker border */
+}
+.project-card:hover {
+    transform: translateY(-12px) scale(1.03); /* More pronounced hover */
+    box-shadow: 0 12px 35px var(--accent-primary);
+}
+.project-card h3 {
+    font-size: 1.6rem;
+    color: var(--text-headings);
+    padding: 25px 30px 0; /* More padding */
+    margin-bottom: 15px;
+}
+.project-card p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    padding: 0 30px;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+.project-card .tech-stack {
+    font-size: 0.95rem;
+    color: var(--accent-secondary);
+    padding: 0 30px 18px;
+    font-style: italic;
+}
+.project-card .tech-stack strong {
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+.project-links {
+    padding: 25px 30px; /* More padding */
+    background-color: var(--bg-dark-tertiary);
+    border-top: 1.5px solid var(--border-color);
+    margin-top: auto;
+    text-align: right;
+}
+
+/* ==================
+   Contact Section
+   ================== */
+.contact-section .container {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Fallback/general text alignment */
+}
+
+.contact-section .contact-intro { /* Targets the <p> tag after h2 */
+    font-size: 1.2rem; /* Larger intro text */
+    max-width: 700px; /* Wider for better flow */
+    margin-bottom: 45px; /* More space */
+    color: var(--text-secondary);
+    line-height: 1.85;
+}
+
+.contact-info {
+    /* display: inline-block; Removed, as parent is flex */
+    margin-top: 30px; /* Space above the info block */
+    width: 100%; /* Allow it to take width for its internal text-align */
+    max-width: 500px; /* Constrain width for very wide screens */
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    font-size: 1.15rem; /* Slightly larger contact details */
+    line-height: 1.65;
+    text-align: center; /* Ensures text within p is centered */
+}
+.contact-info p .privacy-note {
+    display: block; /* Put note on new line */
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+.contact-info .social-links a {
+    font-weight: 600; /* Bolder social links */
+    margin: 0 10px; /* Space around links */
+    font-size: 1.2rem;
+}
+.contact-info .social-links .separator {
+    color: var(--text-secondary);
+    opacity: 0.5;
+    margin: 0 5px;
+}
+
+/* ==================
+   Footer Section
+   ================== */
+.footer-section {
+    background-color: var(--bg-dark-primary);
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 45px 0; /* More padding */
+    border-top: 1.5px solid var(--border-color);
+}
+.footer-section p {
+    font-size: 1rem; /* Larger footer text */
+    margin-bottom: 5px;
+}
+
+/* ==================
+   Responsive Design (Media Queries)
+   ================== */
+@media (max-width: 992px) {
+    .container { max-width: 960px; padding: 0 25px; }
+    h2 { font-size: 2.6rem; margin-bottom: 50px; padding-bottom: 15px; }
+    h2::after { width: 80px; height: 5px; }
+    .hero-content h1 { font-size: 4rem; }
+    .hero-content .subtitle { font-size: 1.9rem; }
+    .nav-menu { gap: 25px; }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    h2 { font-size: 2.3rem; margin-bottom: 40px; padding-bottom: 12px; }
+    h2::after { width: 70px; height: 4px; }
+    .hero-content h1 { font-size: 3rem; letter-spacing: 1.5px;}
+    .hero-content .subtitle { font-size: 1.6rem; letter-spacing: 1px;}
+    .hero-bio { font-size: 1.1rem; }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px; /* Match navbar height */
+        flex-direction: column;
+        background-color: rgba(22, 22, 37, 0.97); /* Darker mobile menu */
+        backdrop-filter: blur(10px);
+        width: 100%;
+        height: calc(100vh - 80px); /* Full height minus navbar */
+        text-align: center;
+        transition: left 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bounce effect */
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.25);
+        padding: 30px 0;
+        overflow-y: auto; /* Allow scrolling if many items */
+        z-index: 999;
+    }
+    .nav-menu.active { left: 0; }
+    .nav-item { margin: 2rem 0; } /* More spacing in mobile menu */
+    .nav-link::after { left: 50%; transform: translateX(-50%); }
+    .nav-link:hover::after, .nav-link.active::after { width: 65%; }
+
+    .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(10.5px) rotate(45deg); } /* Adjusted for thicker bars */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-10.5px) rotate(-45deg); }
+
+    .about-text { text-align: left; }
+    .about-text p { font-size: 1.05rem; }
+    .projects-grid { grid-template-columns: 1fr; gap: 30px; }
+    .experience-item, .education-item, .volunteer-item { padding: 30px; }
+    .experience-item h3, .education-item h3, .volunteer-item h3 { font-size: 1.5rem; }
+    .contact-section .contact-intro { font-size: 1.1rem; }
+    .contact-info p { font-size: 1.1rem; }
+}
+
+@media (max-width: 576px) {
+    .container { padding: 0 15px; }
+    h2 { font-size: 2rem; }
+    .hero-content h1 { font-size: 2.5rem; letter-spacing: 1px; }
+    .hero-content .subtitle { font-size: 1.4rem; }
+    .hero-buttons .btn { display: block; margin: 18px auto; width: 90%; padding: 15px 20px; }
+    .skills-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; }
+    .skill-item h3 { font-size: 1.15rem; }
+    .project-card h3 { font-size: 1.4rem; }
+    .project-card p { font-size: 1rem; }
+    section { padding: 80px 0; }
+}
