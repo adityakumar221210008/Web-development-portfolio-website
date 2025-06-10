@@ -1,96 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Kumar - Web Developer Portfolio</title>
-    <meta name="description" content="Personal portfolio website of Aditya Kumar, a Full Stack Web Developer showcasing skills, projects, and achievements.">
-    <meta name="keywords" content="Aditya Kumar, Web Developer, Full Stack, Portfolio, HTML, CSS, JavaScript, React, Node.js">
-    <!-- Google Fonts - Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for potential icons (optional) -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-</head>
-<body>
-
-    <header id="header">
-        <nav class="navbar">
-            <div class="container">
-                <a href="#hero" class="nav-logo">Aditya Kumar</a>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main> {/* Added main tag for semantic structure */}
-        <section id="hero" class="hero-section">
-            <div class="container hero-content">
-                <h1>Aditya Kumar</h1>
-                <p class="subtitle">Full Stack Web Developer</p>
-                <p class="hero-bio">
-                    Motivated and detail-oriented Full Stack Web Developer with hands-on experience in developing scalable,
-                    responsive web applications using technologies like HTML, CSS, JavaScript, React, express.js, and MongoDB.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="assets/Aditya_Kumar_Resume.pdf" target="_blank" class="btn btn-secondary">Download Resume</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
-                            Hello! I'm Aditya Kumar, a Full Stack Web Developer driven by a passion for building intuitive and efficient web applications. From crafting responsive user interfaces with HTML, CSS, and JavaScript to developing robust backend systems with Node.js, Express, and MongoDB, I enjoy tackling challenges across the entire development lifecycle.
-                        </p>
-                        <p>
-                            I believe in the power of clean, maintainable code and have a keen eye for detail, always striving to understand and implement UI/UX principles effectively. My journey into web development has been fueled by a desire to solve real-world problems and create meaningful digital experiences.
-                        </p>
-                        <p>
-                            Currently, I'm eager to contribute my skills to high-impact projects in a dynamic environment where I can continue to learn, grow, and collaborate with talented teams.
-                        </p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aditya Kumar - Web Developer Portfolio</title>
+        <meta
+            name="description"
+            content="Personal portfolio website of Aditya Kumar, a Full Stack Web Developer showcasing skills, projects, and achievements."
+        />
+        <meta
+            name="keywords"
+            content="Aditya Kumar, Web Developer, Full Stack, Portfolio, HTML, CSS, JavaScript, React, Node.js"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <!-- Google Fonts - Poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <!-- Particles.js CDN -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <!-- Vanilla Tilt for 3D Hover Effect -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+        <!-- ==================
+   Header & Navigation
+   ================== -->
+        <header id="header">
+            <nav class="navbar">
+                <div class="container">
+                    <a href="#" class="nav-logo">AdityaKumar<span>.</span></a>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#experience" class="nav-link active"
+                                >Professional</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">Personal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="header-actions">
+                        <button class="lang-switcher btn btn-small">
+                            <i class="fa-solid fa-location-dot"></i> India
+                        </button>
+                        <div class="hamburger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </nav>
+        </header>
 
+        <!-- ==================
+   Hero Section
+   ================== -->
+        <main>
+            <section class="hero-section">
+                <div class="hero-bg-grid"></div>
+                <div class="container hero-container">
+                    <!-- Left Column: Text Content -->
+                    <div class="hero-text">
+                        <h1>
+                            Hello I'm
+                            <span>Aditya</span>
+                        </h1>
+                        <p class="hero-bio">FullStack Developer</p>
+                        <div class="hero-actions">
+                            <a
+                                href="https://docs.google.com/document/d/1wEVmgP4x95SllUunn_utlRXTKWayLrDs/edit?usp=drive_link&ouid=101025133761734949696&rtpof=true&sd=true"
+                                class="btn btn-secondary"
+                                target="_blank"
+                            >
+                                Download CV <i class="fas fa-download"></i>
+                            </a>
+                            <div class="social-icons">
+                                <a
+                                    href="https://www.linkedin.com/in/aditya-kumar-a7162723a/"
+                                    aria-label="LinkedIn"
+                                    target="_blank"
+                                    ><i class="fab fa-linkedin-in"></i
+                                ></a>
+                                <a
+                                    href="https://github.com/adityakumar221210008"
+                                    aria-label="GitHub"
+                                    target="_blank"
+                                    ><i class="fab fa-github"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Image -->
+                    <div class="hero-image-container">
+                        <div class="hero-image-border"></div>
+                        <img
+                            src="profile.jpg"
+                            alt="Aditya Kumar"
+                            class="hero-image"
+                        />
+                    </div>
+                </div>
+            </section>
+        </main>
         <section id="skills" class="skills-section">
             <div class="container">
                 <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-item"><h3>HTML5</h3></div>
-                    <div class="skill-item"><h3>CSS3</h3></div>
-                    <div class="skill-item"><h3>JavaScript</h3></div>
-                    <div class="skill-item"><h3>React</h3></div>
-                    <div class="skill-item"><h3>Node.js</h3></div>
-                    <div class="skill-item"><h3>Express.js</h3></div>
-                    <div class="skill-item"><h3>MongoDB</h3></div>
-                    <div class="skill-item"><h3>MySQL</h3></div>
-                    <div class="skill-item"><h3>Git</h3></div>
-                    <div class="skill-item"><h3>GitHub</h3></div>
-                    <div class="skill-item"><h3>Python</h3></div>
-                    <div class="skill-item"><h3>Ui/Ux</h3></div>
-                    <div class="skill-item"><h3>REST APIs</h3></div>
-                    <div class="skill-item"><h3>VS Code</h3></div>
+                <div class="skills-grid" id="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-html5 skill-icon"></i>
+                        <h3>HTML5</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt skill-icon"></i>
+                        <h3>CSS3</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js skill-icon"></i>
+                        <h3>JavaScript</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-react skill-icon"></i>
+                        <h3>React</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-node-js skill-icon"></i>
+                        <h3>Node.js</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-server skill-icon"></i>
+                        <h3>Express.js</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database skill-icon"></i>
+                        <h3>MongoDB</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="65"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database skill-icon"></i>
+                        <h3>MySQL</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="60"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-git-alt skill-icon"></i>
+                        <h3>Git</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-github skill-icon"></i>
+                        <h3>GitHub</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-python skill-icon"></i>
+                        <h3>Python</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="60"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-paint-brush skill-icon"></i>
+                        <h3>UI/UX</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code skill-icon"></i>
+                        <h3>REST APIs</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="65"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-laptop-code skill-icon"></i>
+                        <h3>VS Code</h3>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar" data-level="85"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -100,11 +227,21 @@
                 <h2>Work Experience</h2>
                 <div class="experience-item">
                     <h3>Full Stack Web Development Intern</h3>
-                    <p class="experience-company-date">SKILL HIGH • 04/2025 - 07/2025 (Internship)</p>
+                    <p class="experience-company-date">
+                        SKILL HIGH • 04/2025 - 07/2025 (Internship)
+                    </p>
                     <ul>
-                        <li>Collaborating on real-world web development projects in an agile environment.</li>
-                        <li>Implementing full-stack features using MERN stack.</li>
-                        <li>Participating in code reviews and deploying applications.</li>
+                        <li>
+                            Collaborating on real-world web development projects
+                            in an agile environment.
+                        </li>
+                        <li>
+                            Implementing full-stack features using MERN stack.
+                        </li>
+                        <li>
+                            Participating in code reviews and deploying
+                            applications.
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -114,93 +251,153 @@
             <div class="container">
                 <h2>Projects</h2>
                 <div class="projects-grid">
-                    <div class="project-card">
+                    <div
+                        class="project-card"
+                        data-tilt
+                        data-tilt-max="10"
+                        data-tilt-speed="400"
+                        data-tilt-glare="true"
+                        data-tilt-max-glare="0.3"
+                    >
                         <h3>AI Travel Agent Application</h3>
-                        <p>Built an AI-powered app that generates custom travel plans based on user preferences and budget using OpenAI API and location-based data.</p>
-                        <p class="tech-stack"><strong>Stack:</strong> React, Node.js, OpenAI API</p>
+                        <p>
+                            Built an AI-powered app that generates custom travel
+                            plans based on user preferences and budget using
+                            OpenAI API and location-based data.
+                        </p>
+                        <p class="tech-stack">
+                            <strong>Stack:</strong> React, Node.js, OpenAI API
+                        </p>
                         <div class="project-links">
-                            <a href="#" target="_blank" class="btn btn-small">GitHub</a>
+                            <a href="#" target="_blank" class="btn btn-small"
+                                >GitHub</a
+                            >
+                            <a href="#" target="_blank" class="btn btn-small"
+                                >Live Demo</a
+                            >
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div
+                        class="project-card"
+                        data-tilt
+                        data-tilt-max="10"
+                        data-tilt-speed="400"
+                        data-tilt-glare="true"
+                        data-tilt-max-glare="0.3"
+                    >
                         <h3>Portfolio Website</h3>
-                        <p>Personal portfolio showcasing skills, resume, and live projects with interactive animations and responsive layout.</p>
-                        <p class="tech-stack"><strong>Stack:</strong> HTML, CSS, JavaScript</p>
+                        <p>
+                            Personal portfolio showcasing skills, resume, and
+                            live projects with interactive animations and
+                            responsive layout.
+                        </p>
+                        <p class="tech-stack">
+                            <strong>Stack:</strong> HTML, CSS, JavaScript
+                        </p>
                         <div class="project-links">
-                            <a href="https://github.com/adityakumar221210008/Web-development-portfolio-website" target="_blank" class="btn btn-small">GitHub</a>
+                            <a
+                                href="https://github.com/adityakumar221210008/Web-development-portfolio-website"
+                                target="_blank"
+                                class="btn btn-small"
+                                >GitHub</a
+                            >
+                            <a href="#" target="_blank" class="btn btn-small"
+                                >Live Demo</a
+                            >
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div
+                        class="project-card"
+                        data-tilt
+                        data-tilt-max="10"
+                        data-tilt-speed="400"
+                        data-tilt-glare="true"
+                        data-tilt-max-glare="0.3"
+                    >
                         <h3>Student Management System</h3>
-                        <p>Developed a command-line based application to manage student records using the C programming language. Implemented basic CRUD operations.</p>
+                        <p>
+                            Developed a command-line based application to manage
+                            student records using the C programming language.
+                            Implemented basic CRUD operations.
+                        </p>
                         <p class="tech-stack"><strong>Stack:</strong> C</p>
                         <div class="project-links">
-                            <a href="#" target="_blank" class="btn btn-small">GitHub</a>
+                            <a href="#" target="_blank" class="btn btn-small"
+                                >GitHub</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education" class="education-section">
+            <!-- In your #education section -->
+            <div class="container">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <!-- Assuming you use an icon library -->
+
+                <div class="education-grid">
+                    <!-- Card 1: High School -->
+                    <div class="education-item">
+                        <h3>High school certificate</h3>
+                        <p class="education-date">2020 - 2022</p>
+                        <div class="education-details">
+                            <span class="institution">GMSSS 33 Chandigarh</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: University -->
+                    <div class="education-item">
+                        <h3>Bachelor's in computer science</h3>
+                        <p class="education-date">2022 - 2026</p>
+                        <div class="education-details">
+                            <span class="institution"
+                                >National Institute of Technology Delhi</span
+                            >
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="education" class="education-section">
-            <div class="container">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <h3>B.Tech in Computer Science and Engineering</h3>
-                    <p class="institution-date">National Institute of Technology, Delhi • 11/2022 - 06/2026</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="volunteering" class="volunteering-section">
-            <div class="container">
-                <h2>Volunteering & Leadership</h2>
-                <div class="volunteer-item">
-                    <h3>Clairvoyance (Photography Club)</h3>
-                    <p class="organization-role">NIT DELHI</p>
-                    <ul>
-                        <li>Participated in campus event coverage, photography walks, and creative visual storytelling for student publications.</li>
-                        <li>Contributed to organizing photo exhibitions and mentoring new members in basic photography techniques.</li>
-                    </ul>
-                </div>
-                <div class="volunteer-item">
-                    <h3>Executive Member - SCIE (Startup Cell)</h3>
-                    <p class="organization-role">NIT DELHI</p>
-                    <ul>
-                        <li>Led the planning and execution of startup-focused events, including pitch sessions, workshops, and speaker series.</li>
-                        <li>Coordinated with founders, alumni, and faculty to foster a culture of entrepreneurship on campus.</li>
-                        <li>Mentored junior members and contributed to strategic planning for club activities.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
+        <!-- ==================
+           Contact Section
+           ================== -->
         <section id="contact" class="contact-section">
-             <h2>Contact Me</h2>
             <div class="container">
-             
-                <p class="contact-intro"> 
-                    Feel free to reach out! I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-                </p>
-                <div class="contact-info">
-                    <p><a href="mailto:aditya752907@gmail.com">aditya752907@gmail.com</a></p>
-                    <p>Phone: 0000000000 <span class="privacy-note">(Consider privacy implications)</span></p>
-                    <p class="social-links">
-                        <a href="https://linkedin.com/in/aditya-kumar-a7162723a" target="_blank">LinkedIn</a>
-                        <span class="separator">|</span>
-                        <a href="https://github.com/adityakumar221210008" target="_blank">GitHub</a>
+        
+                <!-- This H2 is now styled by your global h2 rule, ensuring consistency -->
+                <h2>Contact</h2>
+        
+                <div class="contact-container">
+                    <p class="contact-description">
+                        I am currently open to new opportunities and collaborations. My inbox is always open — whether you have a question or just want to say hi, I'll be sure to get back to you!
                     </p>
+        
+                    <!-- 1. The Email Address (Primary Contact) -->
+                    <div class="email-link-wrapper">
+                        <a class="email-link" href="mailto:aditya752907@gmail.com">
+                            aditya752907@gmail.com
+                        </a>
+                    </div>
+        
+                    <!-- 2. The Social Links (Secondary) -->
+                    <ul class="social-links">
+                        <li>
+                            <a href="https://linkedin.com/in/aditya-kumar-a7162723a" target="_blank" rel="noopener noreferrer">
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/adityakumar221210008" target="_blank" rel="noopener noreferrer">
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+        
             </div>
         </section>
-    </main>
-
-    <footer id="footer" class="footer-section">
-        <div class="container">
-            <p>© <span id="currentYear"></span> Aditya Kumar. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
